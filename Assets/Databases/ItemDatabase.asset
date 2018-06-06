@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2405ccce9f1710d43a68f3ec8802e75f, type: 3}
+  m_Name: ItemDatabase
+  m_EditorClassIdentifier: 
+  ItemCategories:
+  - CategoryName: Resources
+    CategoryItems:
+    - Name: Wood
+      Icon: {fileID: 21300000, guid: 97b662a6d1fe8a54fb6acbb65096876d, type: 3}
+      MaxStackSize: 1
+      WorldObject: {fileID: 1821946817592626, guid: 46b46922140c2db42b1a0f9ed513136e,
+        type: 2}
+    - Name: 
+      Icon: {fileID: 0}
+      MaxStackSize: 0
+      WorldObject: {fileID: 0}
+    - Name: 
+      Icon: {fileID: 0}
+      MaxStackSize: 0
+      WorldObject: {fileID: 0}
+    - Name: 
+      Icon: {fileID: 0}
+      MaxStackSize: 0
+      WorldObject: {fileID: 0}
+    - Name: 
+      Icon: {fileID: 0}
+      MaxStackSize: 0
+      WorldObject: {fileID: 0}
