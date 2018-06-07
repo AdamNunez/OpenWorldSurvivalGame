@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[BoltGlobalBehaviour(BoltNetworkModes.Server)]
-public class ServerCallbacks : Bolt.GlobalEventListener
+namespace OpenWorld.Network
 {
-    public override void SceneLoadRemoteDone(BoltConnection connection)
-    {
-        PlayerRegistry.CreatePlayer(connection);
-        PlayerRegistry.GetPlayer(connection).CreateNewPlayer();
-    }
+    [BoltGlobalBehaviour(BoltNetworkModes.Server)]
 
+    public class ServerCallbacks : Bolt.GlobalEventListener
+    {
+        public override void SceneLoadRemoteDone(BoltConnection connection)
+        {
+            PlayerRegistry.CreatePlayer(connection);
+            PlayerRegistry.GetPlayer(connection).CreateNewPlayer();
+        }
+
+    }
 }

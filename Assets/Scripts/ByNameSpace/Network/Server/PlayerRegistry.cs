@@ -3,24 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public static class PlayerRegistry
+namespace OpenWorld.Network
 {
-    static List<NetworkedPlayer> networkedPlayers = new List<NetworkedPlayer>();
-
-    public static NetworkedPlayer CreatePlayer(BoltConnection boltConnection)
+    public static class PlayerRegistry
     {
-        NetworkedPlayer networkedPlayer = new NetworkedPlayer();
+        static List<NetworkedPlayer> networkedPlayers = new List<NetworkedPlayer>();
 
-        networkedPlayer.Connection = boltConnection;
-        networkedPlayer.Connection.UserData = networkedPlayer;
+        public static NetworkedPlayer CreatePlayer(BoltConnection boltConnection)
+        {
+            NetworkedPlayer networkedPlayer = new NetworkedPlayer();
 
-        networkedPlayers.Add(networkedPlayer);
+            networkedPlayer.Connection = boltConnection;
+            networkedPlayer.Connection.UserData = networkedPlayer;
 
-        return networkedPlayer;
-    }
+            networkedPlayers.Add(networkedPlayer);
 
-    public static NetworkedPlayer GetPlayer(BoltConnection boltConnection)
-    {
-       return networkedPlayers.Where(np => np.Connection == boltConnection).FirstOrDefault();
+            return networkedPlayer;
+        }
+
+        public static NetworkedPlayer GetPlayer(BoltConnection boltConnection)
+        {
+            return networkedPlayers.Where(np => np.Connection == boltConnection).FirstOrDefault();
+        }
     }
 }

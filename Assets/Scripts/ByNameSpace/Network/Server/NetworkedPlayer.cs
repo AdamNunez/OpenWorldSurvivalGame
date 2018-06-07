@@ -2,26 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NetworkedPlayer
+namespace OpenWorld.Network
 {
-
-    public BoltEntity Character { get; set; }
-    public BoltConnection Connection { get; set; }
-
-    public void CreateNewPlayer()
+    public class NetworkedPlayer
     {
-        if (!Character)
+
+        public BoltEntity Character { get; set; }
+        public BoltConnection Connection { get; set; }
+
+        public void CreateNewPlayer()
         {
-            Character = BoltNetwork.Instantiate(BoltPrefabs.Player);
-            Character.AssignControl(Connection);
+            if (!Character)
+            {
+                Character = BoltNetwork.Instantiate(BoltPrefabs.Player);
+                Character.AssignControl(Connection);
+            }
+
+            // teleport entity to a random spawn position
+            Character.transform.position = new Vector3(2, 2, 2);
         }
 
-        // teleport entity to a random spawn position
-        Character.transform.position = new Vector3(2, 2, 2);
-    }
+        public void LoadExistingPlayer()
+        {
 
-    public void LoadExistingPlayer()
-    {
-        
+        }
     }
 }
