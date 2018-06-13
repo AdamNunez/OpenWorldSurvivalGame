@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace OpenWorld
+namespace OpenWorld.EventSystem
 {
     /// <summary>
     /// This allows to have a callback when the value changes (An example would be updating the GUI when the player health changes).
@@ -83,30 +83,6 @@ namespace OpenWorld
 
             if (m_Set != null && (m_LastValue == null || !m_LastValue.Equals(m_CurrentValue)))
                 m_Set();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public void SetAndForceUpdate(T value)
-        {
-            m_LastValue = m_CurrentValue;
-            m_CurrentValue = value;
-
-            if (m_Filter != null)
-                m_CurrentValue = m_Filter(m_LastValue, m_CurrentValue);
-
-            if (m_Set != null)
-                m_Set();
-        }
-
-        public void SetAndDontUpdate(T value)
-        {
-            m_LastValue = m_CurrentValue;
-            m_CurrentValue = value;
-
-            if (m_Filter != null)
-                m_CurrentValue = m_Filter(m_LastValue, m_CurrentValue);
         }
     }
 }

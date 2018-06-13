@@ -14,7 +14,11 @@ namespace OpenWorld.Models
         [SerializeField]
         public string Name;
         [SerializeField]
+        public int Id;
+        [SerializeField]
         public Sprite Icon;
+        [SerializeField]
+        public string Description;
         [SerializeField]
         public int MaxStackSize;
         [SerializeField]
